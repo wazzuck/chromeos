@@ -65,19 +65,26 @@
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 650;
             letter-spacing: -0.02em;
             background: linear-gradient(155deg, #1c1c1e 20%, #3a3a3c 90%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-            margin-bottom: 16px;
+            line-height: 1.2;
+            margin-bottom: 8px;
             text-align: center;
+        }
+        .subheadline {
+            text-align: center;
+            color: #3a3a3c;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-weight: 400;
         }
         @media (min-width: 768px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
         }
 
@@ -200,7 +207,7 @@
             border-left: 4px solid #007aff;
         }
 
-        /* prerequisites section */
+        /* prerequisites section - with visible icon */
         .prerequisites-section {
             background: #ffffff;
             border-radius: 32px;
@@ -215,9 +222,13 @@
             color: #1c1c1e;
             margin-bottom: 16px;
             text-align: center;
-            background: linear-gradient(135deg, #007aff 0%, #005bbf 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .prerequisites-title span {
+            font-size: 1.8rem;
         }
 
         /* explanatory section */
@@ -346,6 +357,21 @@
             letter-spacing: -0.2px;
             white-space: nowrap;
             margin-left: 12px;
+        }
+
+        /* conditional section (for USB question) */
+        .conditional-section {
+            background: #f0f7ff;
+            border-radius: 24px;
+            padding: 20px 22px;
+            margin: 20px 0 16px 0;
+            border: 2px solid #007aff;
+        }
+        .conditional-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1c1c1e;
         }
 
         /* photo upload section */
@@ -512,11 +538,12 @@
 </head>
 <body>
     <div class="quote-card">
-        <h1>Self‑Pricing<br>Made Simple</h1>
+        <h1>ChromeOS Flex Migration<br>Self‑Pricing Made Simple</h1>
+        <div class="subheadline">Answer a few questions to get an instant quote for your ChromeOS Flex migration</div>
 
-        <!-- consultation banner with phone -->
+        <!-- consultation banner with phone - UPDATED TEXT -->
         <div class="consult-banner">
-            <span>📅 Free 15min consultation</span>
+            <span>📅 Free 10 minute consultation with Neville</span>
             <div class="phone-badge clickable-phone" onclick="window.location.href='tel:07809590652'">07809590652</div>
         </div>
 
@@ -552,12 +579,12 @@
             </div>
             <div id="physicalFeedback" class="eligibility-feedback" style="display: none;"></div>
 
-            <!-- Question 3 - RAM Knowledge -->
+            <!-- Question 3 - RAM Knowledge - UPDATED TEXT -->
             <div class="eligibility-question">3️⃣ Do you know how much RAM is inside the computer?</div>
             <div class="eligibility-radio-group" id="ramGroup">
                 <div class="eligibility-radio-card" id="ramYes">
                     <input type="radio" name="ramKnowledge" id="ramKnown" value="yes">
-                    <label for="ramKnown">Yes, I know that there is at least a minimum of 4GB of RAM that will be used for light browsing, or 8GB of RAM that I can use for a home office setup providing lots of multitasking productivity</label>
+                    <label for="ramKnown">Yes, I know that there is at least a minimum of 4GB of RAM that will be used for light browsing, emails and watching television or 8GB of RAM that I can use for a home office setup providing lots of multitasking productivity and office documents open at once</label>
                 </div>
                 <div class="eligibility-radio-card" id="ramNo">
                     <input type="radio" name="ramKnowledge" id="ramUnknown" value="no">
@@ -622,9 +649,106 @@
             });
         </script>
 
-        <!-- PREREQUISITES SECTION - NEW -->
+        <!-- explanatory section about basic migration pricing -->
+        <div class="info-message">
+            <p>💡 <strong>The basic migration is £70</strong> — this covers the standard ChromeOS Flex installation on your device.</p>
+            <p>If you need help preserving your photos, documents, current working system please apply the relevant options below.</p>
+        </div>
+
+        <!-- OPTIONS SECTION -->
+        <div class="options-section">
+            <div class="options-title">Additional data care options available</div>
+            
+            <!-- OPTION 1 block -->
+            <div class="section-label">
+                Option 1 <small>data migration</small>
+            </div>
+            <div class="question-text">
+                Do you need help transferring photos, documents, or important data?
+            </div>
+
+            <div class="radio-grid" id="migrationGroup">
+                <!-- radio 1: no (self backup) £70 -->
+                <div class="radio-card" id="radioNo">
+                    <input type="radio" name="migration" id="migNo" value="no">
+                    <label for="migNo">No, I've already backed up myself</label>
+                    <span class="price-chip">£70</span>
+                </div>
+                <!-- radio 2: yes assistance £20 for 30 mins -->
+                <div class="radio-card" id="radioYes">
+                    <input type="radio" name="migration" id="migYes" value="yes">
+                    <label for="migYes">Yes, I require assistance selecting what data is required to be migrated and would appreciate consultation on this matter</label>
+                    <span class="price-chip">£20 (30 mins)</span>
+                </div>
+            </div>
+
+            <!-- Conditional USB question (hidden by default) -->
+            <div id="usbQuestion" class="conditional-section" style="display: none;">
+                <div class="conditional-title">💾 The computer will be wiped clean as part of the migration. Do you have something such as a USB drive to store this data on?</div>
+                <div class="eligibility-radio-group" id="usbGroup">
+                    <div class="eligibility-radio-card" id="usbYes">
+                        <input type="radio" name="usbStorage" id="usbYesRadio" value="yes">
+                        <label for="usbYesRadio">Yes - I have a device already that is large enough to store the large amount of data that is copied across in a typical migration. (For example I have a working 64GB or 128GB USB storage device.)</label>
+                    </div>
+                    <div class="eligibility-radio-card" id="usbNo">
+                        <input type="radio" name="usbStorage" id="usbNoRadio" value="no">
+                        <label for="usbNoRadio">No - But I will purchase my own in advance.</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 2 Reversible backup -->
+            <div class="section-label" style="margin-top: 20px;">
+                Option 2 <small>reversible backup</small>
+            </div>
+            <div class="question-text">
+                Do you want the change to be fully reversible in the event that you need to get the system back to how it is now?
+            </div>
+
+            <div class="radio-grid" id="reversibleGroup">
+                <!-- radio no: permanent change £0 -->
+                <div class="radio-card" id="reversibleNo">
+                    <input type="radio" name="reversible" id="revNo" value="no">
+                    <label for="revNo">No, I understand what ChromeOS Flex is and I'm happy for the change to be permanent with no way back</label>
+                    <span class="price-chip">£0</span>
+                </div>
+                <!-- radio yes: exact clone USB -->
+                <div class="radio-card" id="reversibleYes">
+                    <input type="radio" name="reversible" id="revYes" value="yes">
+                    <label for="revYes">Yes, I would an exact clone of every aspect of my system, so that upon request I can revert back to exactly before the change to Chrome OS Flex was made</label>
+                    <span class="price-chip">+ £100</span>
+                </div>
+            </div>
+
+            <!-- Collection and Return Option - UPDATED TEXT -->
+            <div class="section-label" style="margin-top: 20px;">
+                Option 3 <small>collection & return</small>
+            </div>
+            <div class="question-text">
+                Do you require the device to be collected and returned?
+            </div>
+
+            <div class="radio-grid" id="collectionGroup">
+                <!-- radio 1: no, deliver/collect NW11 7BY - no charge -->
+                <div class="radio-card" id="collectionNo">
+                    <input type="radio" name="collection" id="collNo" value="no">
+                    <label for="collNo">No, I am happy to deliver and collect the device at pre-agreed times to / from NW11 7BY</label>
+                    <span class="price-chip">£0</span>
+                </div>
+                <!-- radio 2: yes, collect and return +£10 - UPDATED TEXT -->
+                <div class="radio-card" id="collectionYes">
+                    <input type="radio" name="collection" id="collYes" value="yes">
+                    <label for="collYes">Yes - I would prefer if the device could be collected and returned and I live within a 20 minute drive of NW11 7BY</label>
+                    <span class="price-chip">+ £10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PREREQUISITES SECTION - MOVED HERE, WITH VISIBLE ICON -->
         <div class="prerequisites-section">
-            <div class="prerequisites-title">✅ Prerequisites</div>
+            <div class="prerequisites-title">
+                <span>✅</span> Prerequisites
+            </div>
             
             <div class="eligibility-question">Do you have a Google account?</div>
             <div class="eligibility-radio-group" id="googleAccountGroup">
@@ -656,86 +780,6 @@
             });
         </script>
 
-        <!-- explanatory section about basic migration pricing - UPDATED TEXT -->
-        <div class="info-message">
-            <p>💡 <strong>The basic migration is £70</strong> — this covers the standard ChromeOS Flex installation on your device.</p>
-            <p>If you need help preserving your photos, documents, current working system please apply the relevant options below.</p>
-        </div>
-
-        <!-- OPTIONS SECTION with blue border - UPDATED TITLE -->
-        <div class="options-section">
-            <div class="options-title">Additional data care options available</div>
-            
-            <!-- OPTION 1 block - UPDATED TEXT AND PRICE -->
-            <div class="section-label">
-                Option 1 <small>data migration</small>
-            </div>
-            <div class="question-text">
-                Do you need help transferring photos, documents, or important data?
-            </div>
-
-            <div class="radio-grid" id="migrationGroup">
-                <!-- radio 1: no (self backup) £70 -->
-                <div class="radio-card" id="radioNo">
-                    <input type="radio" name="migration" id="migNo" value="no">
-                    <label for="migNo">No, I've already backed up myself</label>
-                    <span class="price-chip">£70</span>
-                </div>
-                <!-- radio 2: yes assistance £20 for 30 mins - UPDATED -->
-                <div class="radio-card" id="radioYes">
-                    <input type="radio" name="migration" id="migYes" value="yes">
-                    <label for="migYes">Yes, I require assistance selecting what data is required to be migrated and would appreciate consultation on this matter</label>
-                    <span class="price-chip">£20 (30 mins)</span>
-                </div>
-            </div>
-
-            <!-- OPTION 2 Reversible backup -->
-            <div class="section-label" style="margin-top: 20px;">
-                Option 2 <small>reversible backup</small>
-            </div>
-            <div class="question-text">
-                Do you want the change to be fully reversible in the event that you need to get the system back to how it is now?
-            </div>
-
-            <div class="radio-grid" id="reversibleGroup">
-                <!-- radio no: permanent change £0 -->
-                <div class="radio-card" id="reversibleNo">
-                    <input type="radio" name="reversible" id="revNo" value="no">
-                    <label for="revNo">No, I understand what ChromeOS Flex is and I'm happy for the change to be permanent with no way back</label>
-                    <span class="price-chip">£0</span>
-                </div>
-                <!-- radio yes: exact clone USB -->
-                <div class="radio-card" id="reversibleYes">
-                    <input type="radio" name="reversible" id="revYes" value="yes">
-                    <label for="revYes">Yes, I would an exact clone of every aspect of my system, so that upon request I can revert back to exactly before the change to Chrome OS Flex was made</label>
-                    <span class="price-chip">+ £100</span>
-                </div>
-            </div>
-
-            <!-- Collection and Return Option -->
-            <div class="section-label" style="margin-top: 20px;">
-                Option 3 <small>collection & return</small>
-            </div>
-            <div class="question-text">
-                Do you require the device to be collected and returned?
-            </div>
-
-            <div class="radio-grid" id="collectionGroup">
-                <!-- radio 1: no, deliver/collect NW11 7BY - no charge -->
-                <div class="radio-card" id="collectionNo">
-                    <input type="radio" name="collection" id="collNo" value="no">
-                    <label for="collNo">No, I am happy to deliver and collect the device at pre-agreed times to / from NW11 7BY</label>
-                    <span class="price-chip">£0</span>
-                </div>
-                <!-- radio 2: yes, collect and return +£10 -->
-                <div class="radio-card" id="collectionYes">
-                    <input type="radio" name="collection" id="collYes" value="yes">
-                    <label for="collYes">Yes - I would prefer if the device could be collected and returned</label>
-                    <span class="price-chip">+ £10</span>
-                </div>
-            </div>
-        </div>
-
         <!-- PHOTO UPLOAD SECTION -->
         <div class="photo-section">
             <p>📸 <strong>Upload at least one photo</strong> of the sticker on the back or bottom of the laptop clearly showing the make and model number</p>
@@ -748,7 +792,7 @@
             <div id="photoRequired" class="photo-required-badge">⚠️ At least one photo required before sending quote</div>
         </div>
 
-        <!-- live quote summary - UPDATED to include google account -->
+        <!-- live quote summary -->
         <div class="summary-panel" id="summary">
             <div class="summary-row">
                 <span>Data migration</span>
@@ -761,6 +805,10 @@
             <div class="summary-row">
                 <span>Collection & return</span>
                 <span id="sumColl" class="placeholder-text">not selected</span>
+            </div>
+            <div class="summary-row">
+                <span>USB storage</span>
+                <span id="sumUsb" class="placeholder-text">not applicable</span>
             </div>
             <div class="summary-row">
                 <span>Google account</span>
@@ -818,6 +866,13 @@
             const googleYesDiv = document.getElementById('googleYes');
             const googleNoDiv = document.getElementById('googleNo');
 
+            // USB storage radios
+            const usbYes = document.getElementById('usbYesRadio');
+            const usbNo = document.getElementById('usbNoRadio');
+            const usbYesDiv = document.getElementById('usbYes');
+            const usbNoDiv = document.getElementById('usbNo');
+            const usbQuestion = document.getElementById('usbQuestion');
+
             // photo upload
             const photoUpload = document.getElementById('photoUpload');
             const photoPreview = document.getElementById('photoPreview');
@@ -827,6 +882,7 @@
             const sumMig = document.getElementById('sumMig');
             const sumRev = document.getElementById('sumRev');
             const sumColl = document.getElementById('sumColl');
+            const sumUsb = document.getElementById('sumUsb');
             const sumGoogle = document.getElementById('sumGoogle');
             const totalSpan = document.getElementById('totalPrice');
 
@@ -862,12 +918,35 @@
 
             let googleSelected = false;
             let googleLabel = '';
+
+            let usbSelected = false;
+            let usbLabel = '';
             
             let photosUploaded = false;
             let photoCount = 0;
 
+            // Show/hide USB question based on migration selection
+            function toggleUsbQuestion() {
+                if (migYes.checked) {
+                    usbQuestion.style.display = 'block';
+                } else {
+                    usbQuestion.style.display = 'none';
+                    // Reset USB selection if hidden
+                    if (usbYes) usbYes.checked = false;
+                    if (usbNo) usbNo.checked = false;
+                    usbSelected = false;
+                    usbLabel = '';
+                    sumUsb.innerText = 'not applicable';
+                    sumUsb.classList.add('placeholder-text');
+                }
+                updateSummaryAndUI();
+            }
+
+            migYes.addEventListener('change', toggleUsbQuestion);
+            migNo.addEventListener('change', toggleUsbQuestion);
+
             function updateSummaryAndUI() {
-                // Check migration selection - UPDATED PRICE
+                // Check migration selection
                 if (migYes.checked) {
                     migrationSelected = true;
                     migrationPrice = 20;
@@ -930,6 +1009,26 @@
                     sumColl.classList.add('placeholder-text');
                 }
 
+                // Check USB selection (only if migration yes is selected)
+                if (migYes.checked) {
+                    if (usbYes && usbYes.checked) {
+                        usbSelected = true;
+                        usbLabel = 'Has USB storage';
+                        sumUsb.innerText = 'has USB';
+                        sumUsb.classList.remove('placeholder-text');
+                    } else if (usbNo && usbNo.checked) {
+                        usbSelected = true;
+                        usbLabel = 'Will purchase USB';
+                        sumUsb.innerText = 'will purchase';
+                        sumUsb.classList.remove('placeholder-text');
+                    } else {
+                        usbSelected = false;
+                        usbLabel = '';
+                        sumUsb.innerText = 'not selected';
+                        sumUsb.classList.add('placeholder-text');
+                    }
+                }
+
                 // Check google account selection
                 if (googleYes.checked) {
                     googleSelected = true;
@@ -948,8 +1047,13 @@
                     sumGoogle.classList.add('placeholder-text');
                 }
 
-                // Calculate total if all selected
-                if (migrationSelected && reversibleSelected && collectionSelected && googleSelected) {
+                // Calculate total if all required selections are made
+                let allSelected = migrationSelected && reversibleSelected && collectionSelected && googleSelected;
+                if (migYes.checked) {
+                    allSelected = allSelected && usbSelected;
+                }
+                
+                if (allSelected) {
                     const total = migrationPrice + reversiblePrice + collectionPrice;
                     totalSpan.innerText = `£${total}`;
                 } else {
@@ -982,13 +1086,24 @@
                     googleNoDiv.classList.add('selected');
                 }
 
+                if (usbYes && usbYes.checked) {
+                    usbYesDiv.classList.add('selected');
+                } else if (usbNo && usbNo.checked) {
+                    usbNoDiv.classList.add('selected');
+                }
+
                 // Check all conditions for showing email section
                 checkAllConditions();
             }
 
             function checkAllConditions() {
-                // Conditions: all sections have a selection AND at least one photo uploaded
-                if (migrationSelected && reversibleSelected && collectionSelected && googleSelected && photosUploaded) {
+                // Conditions: all sections have appropriate selections AND at least one photo uploaded
+                let allSelected = migrationSelected && reversibleSelected && collectionSelected && googleSelected;
+                if (migYes.checked) {
+                    allSelected = allSelected && usbSelected;
+                }
+                
+                if (allSelected && photosUploaded) {
                     emailSection.classList.remove('hidden');
                     requirementsNote.classList.add('hidden');
                 } else {
@@ -1001,12 +1116,11 @@
                     if (!migrationSelected) missing.push('data migration');
                     if (!reversibleSelected) missing.push('reversible backup');
                     if (!collectionSelected) missing.push('collection option');
+                    if (migYes.checked && !usbSelected) missing.push('USB storage');
                     if (!googleSelected) missing.push('Google account');
                     if (!photosUploaded) missing.push('photo upload');
                     
-                    if (missing.length === 5) {
-                        message += 'Please select all options and upload at least one photo';
-                    } else if (missing.length > 0) {
+                    if (missing.length > 0) {
                         message += 'Please select: ' + missing.join(', ');
                     }
                     requirementsNote.innerText = message;
@@ -1040,18 +1154,22 @@
             collYes.addEventListener('change', updateSummaryAndUI);
             googleYes.addEventListener('change', updateSummaryAndUI);
             googleNo.addEventListener('change', updateSummaryAndUI);
+            if (usbYes) usbYes.addEventListener('change', updateSummaryAndUI);
+            if (usbNo) usbNo.addEventListener('change', updateSummaryAndUI);
 
             // Click on cards for easier selection
             radioNoDiv.addEventListener('click', function(e) {
                 if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL' && e.target.tagName !== 'SPAN') {
                     migNo.checked = true;
                     updateSummaryAndUI();
+                    toggleUsbQuestion();
                 }
             });
             radioYesDiv.addEventListener('click', function(e) {
                 if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL' && e.target.tagName !== 'SPAN') {
                     migYes.checked = true;
                     updateSummaryAndUI();
+                    toggleUsbQuestion();
                 }
             });
             revNoDiv.addEventListener('click', function(e) {
@@ -1090,8 +1208,24 @@
                     updateSummaryAndUI();
                 }
             });
+            if (usbYesDiv) {
+                usbYesDiv.addEventListener('click', function(e) {
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL' && e.target.tagName !== 'SPAN') {
+                        usbYes.checked = true;
+                        updateSummaryAndUI();
+                    }
+                });
+            }
+            if (usbNoDiv) {
+                usbNoDiv.addEventListener('click', function(e) {
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL' && e.target.tagName !== 'SPAN') {
+                        usbNo.checked = true;
+                        updateSummaryAndUI();
+                    }
+                });
+            }
 
-            // Initial update (will show placeholders since nothing selected)
+            // Initial update
             updateSummaryAndUI();
 
             // EmailJS send function
@@ -1102,7 +1236,12 @@
                     return;
                 }
 
-                if (!migrationSelected || !reversibleSelected || !collectionSelected || !googleSelected) {
+                let allSelected = migrationSelected && reversibleSelected && collectionSelected && googleSelected;
+                if (migYes.checked) {
+                    allSelected = allSelected && usbSelected;
+                }
+                
+                if (!allSelected) {
                     statusDiv.innerText = '❌ Please select all options first';
                     statusDiv.style.color = '#ff3b30';
                     return;
@@ -1115,7 +1254,7 @@
                 // Calculate total
                 const total = migrationPrice + reversiblePrice + collectionPrice;
 
-                // Prepare template parameters - UPDATED with google account
+                // Prepare template parameters
                 const templateParams = {
                     to_email: 'nevillebryce@gmail.com',
                     customer_email: emailInput.value || 'not provided',
@@ -1123,6 +1262,7 @@
                     reversible: reversibleLabel,
                     collection: collectionLabel,
                     google_account: googleLabel,
+                    usb_storage: usbLabel || 'not applicable',
                     total: total,
                     photo_count: photoCount,
                     phone: '07809590652',
