@@ -468,12 +468,12 @@
             </div>
             <div id="ageFeedback" class="eligibility-feedback" style="display: none;"></div>
 
-            <!-- Question 2 - Physical Working Order -->
+            <!-- Question 2 - Physical Working Order - UPDATED TEXT -->
             <div class="eligibility-question">2️⃣ Physical condition?</div>
             <div class="eligibility-radio-group" id="physicalGroup">
                 <div class="eligibility-radio-card" id="physicalYes">
                     <input type="radio" name="physicalOrder" id="physicalGood" value="good">
-                    <label for="physicalGood">Yes, works fine (minor battery/monitor issues ok)</label>
+                    <label for="physicalGood">Yes most things work fine and I'm happy to work around any minor battery/monitor issues.</label>
                 </div>
                 <div class="eligibility-radio-card" id="physicalNo">
                     <input type="radio" name="physicalOrder" id="physicalBad" value="bad">
@@ -520,7 +520,7 @@
         </div>
 
         <script>
-            // Eligibility feedback handling
+            // Eligibility feedback handling - UPDATED physical feedback text
             document.getElementById('age1_3').addEventListener('change', function() {
                 if(this.checked) {
                     document.getElementById('ageFeedback').style.display = 'block';
