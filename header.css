@@ -88,4 +88,8 @@ header {
     .consultation-text {
         font-size: 0.75rem;
     }
+
+    body {
+        padding-top: 130px;
+    }
 }

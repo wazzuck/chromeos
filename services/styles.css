@@ -15,7 +15,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 110px;
 }
 
 .service-container {
@@ -194,7 +194,7 @@ footer {
 
 @media (max-width: 600px) {
     body {
-        padding-top: 70px;
+        padding-top: 130px;
     }
 
     header {
