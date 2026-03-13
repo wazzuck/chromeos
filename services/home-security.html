@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Digital Security Systems - IToldYouSo Computing</title>
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        const COMPANY_NAME = "IToldYouSo Computing";
+        const PHONE_NUMBER = "07809590652";
+        const EMAIL_ADDRESS = "nevillebryce@gmail.com";
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            // Replace company name in logo
+            const logo = document.querySelector(".logo");
+            if (logo) {
+                logo.textContent = "🖥️ " + COMPANY_NAME;
+            }
+            
+            // Replace company name in footer
+            const footer = document.querySelector("footer");
+            if (footer) {
+                footer.innerHTML = footer.innerHTML.replace(/Neville's Tech Services/g, COMPANY_NAME);
+            }
+            
+            // Replace company name in title
+            document.title = document.title.replace(/Neville's Tech Services/g, COMPANY_NAME);
+            
+            // Update nav buttons with contact info
+            const navButtons = document.querySelector(".nav-buttons");
+            if (navButtons) {
+                navButtons.innerHTML = '<a href="tel:' + PHONE_NUMBER + '" class="nav-btn">' + PHONE_NUMBER + '</a>' +
+                                       '<a href="mailto:' + EMAIL_ADDRESS + '" class="nav-btn" style="font-size: 0.85rem;">' + EMAIL_ADDRESS + '</a>' +
+                                       '<div style="padding: 8px 16px; font-size: 0.8rem; color: #666; font-style: italic; line-height: 1.4;">Free 15 minute<br>consultation</div>';
+            }
+        });
+    </script>
+
+
+
+    <header>
+        <a href="../index.html" class="logo">🖥️ IToldYouSo Computing</a>
+        <div class="phone-info">
+            <a href="tel:07809590652" class="phone-number">07809590652</a>
+            <a href="mailto:nevillebryce@gmail.com" class="email-address">nevillebryce@gmail.com</a>
+            <p class="consultation-text">Free 15 minute consultation</p>
+        </div>
+    </header>
+
+    <div class="service-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Services</a> → Home Digital Security Systems
+        </div>
+
+        <span class="service-icon">🔒</span>
+        <h1>Home Digital Security Systems</h1>
+        <p class="service-tagline">Protect your home with modern smart security solutions</p>
+        <div class="divider"></div>
+
+        <p class="service-description">
+            Secure your home with integrated digital security systems. From smart cameras and door locks to motion sensors and alarm systems, I help you choose, install, and configure modern security solutions that work together seamlessly. Whether you want to monitor your home remotely, receive alerts, or integrate with your smart home ecosystem, I'll design a system tailored to your needs.
+        </p>
+
+        <div class="service-benefits">
+            <h3>Home Security Services Include:</h3>
+            <ul>
+                <li>Smart camera system design and installation</li>
+                <li>Smart lock and door sensor setup</li>
+                <li>Motion and window sensors</li>
+                <li>Alarm system integration</li>
+                <li>24/7 remote monitoring setup</li>
+                <li>Mobile app configuration</li>
+                <li>Cloud storage and backup solutions</li>
+                <li>System maintenance and support</li>
+                <li>Security best practices consulting</li>
+            </ul>
+        </div>
+
+        <div class="pricing-info">
+            <h4>💰 Pricing</h4>
+            <p>£50 per hour for consulting, design, and installation. System costs vary based on your requirements. A 15-minute phone consultation costs nothing—tell me about your security needs and I'll recommend the best solution for your home and budget.</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="contact.html" class="cta-button">Get Home Security Setup</a>
+            <a href="../index.html" class="cta-secondary">View Other Services</a>
+        </div>
+    </div>
+
+    <footer>
+        © IToldYouSo Computing | Home Digital Security Systems
+    </footer>
+</body>
+</html>
