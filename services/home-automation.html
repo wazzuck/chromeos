@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        const COMPANY_NAME = "IToldYouSo Computing";
+        document.addEventListener("DOMContentLoaded", function() {
+            // Replace company name in logo
+            const logo = document.querySelector(".logo");
+            if (logo) {
+                logo.textContent = "🖥️ " + COMPANY_NAME;
+            }
+            // Replace company name in footer
+            const footer = document.querySelector("footer");
+            if (footer) {
+                footer.innerHTML = footer.innerHTML.replace(/Neville's Tech Services/g, COMPANY_NAME);
+            }
+            // Replace company name in title
+            document.title = document.title.replace(/Neville's Tech Services/g, COMPANY_NAME);
+        });
+    </script>
+
     <header>
         <a href="../index.html" class="logo">🖥️ Neville's Tech Services</a>
         <div class="nav-buttons">

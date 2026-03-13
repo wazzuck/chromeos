@@ -466,6 +466,24 @@
     </style>
 </head>
 <body>
+    <script>
+        const COMPANY_NAME = "IToldYouSo Computing";
+        document.addEventListener("DOMContentLoaded", function() {
+            // Replace company name in logo
+            const logo = document.querySelector(".logo");
+            if (logo) {
+                logo.textContent = "🖥️ " + COMPANY_NAME;
+            }
+            // Replace company name in footer
+            const footer = document.querySelector("footer");
+            if (footer) {
+                footer.innerHTML = footer.innerHTML.replace(/Neville's Tech Services/g, COMPANY_NAME);
+            }
+            // Replace company name in title
+            document.title = document.title.replace(/Neville's Tech Services/g, COMPANY_NAME);
+        });
+    </script>
+
     <div class="quote-card">
         <h1>ChromeOS Flex Migration<br>Self‑Pricing Made Simple</h1>
         <div class="subheadline">This is a short questionnaire on getting an instant quote for moving an older computer over to using ChromeOS Flex as its operating system. It's suitable for computers between 4 - 12 years!</div>
