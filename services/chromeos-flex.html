@@ -6,7 +6,7 @@
     <title>ChromeOS Flex · migration quote</title>
     <!-- EmailJS library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Apple-inspired design · fully responsive · optimized for mobile -->
+    <!-- Apple-inspired design · fully responsive · optimised for mobile -->
     <style>
         * {
             margin: 0;
@@ -203,7 +203,7 @@
             .eligibility-question { font-size: 1rem; }
         }
 
-        /* radio cards - optimized for mobile */
+        /* radio cards - optimised for mobile */
         .eligibility-radio-group,
         .radio-grid {
             display: flex;
@@ -466,6 +466,15 @@
     </style>
 </head>
 <body>
+    <header>
+        <a href="../index.html" class="logo">🖥️ IToldYouSo Computing</a>
+        <div class="phone-info">
+            <a href="tel:07809590652" class="phone-number">07809590652</a>
+            <a href="mailto:contactus@itoldyouso.tech" class="email-address">contactus@itoldyouso.tech</a>
+            <p class="consultation-text">Free 15 minute consultation</p>
+        </div>
+    </header>
+
     <div class="quote-card">
         <h1>ChromeOS Flex Migration<br>Self‑Pricing Made Simple</h1>
         <div class="subheadline">This is a short questionnaire on getting an instant quote for moving an older computer over to using ChromeOS Flex as its operating system. It's suitable for computers between 4 - 12 years!</div>
@@ -478,12 +487,6 @@
             <a href="https://www.youtube.com/watch?v=OXaHt9pZCa8" target="_blank" class="info-link youtube-link">
                 <span>▶️</span> Explainer Video
             </a>
-        </div>
-
-        <!-- consultation banner with phone -->
-        <div class="consult-banner">
-            <span>📅 Free 10 min consultation</span>
-            <div class="phone-badge clickable-phone" onclick="window.location.href='tel:07809590652'">07809590652</div>
         </div>
 
         <!-- Base Migration Price Display -->
@@ -838,7 +841,7 @@
 
         <!-- EMAIL FORM -->
         <div class="email-area hidden" id="emailSection">
-            <div class="email-label">📧 Email quote to nevillebryce@gmail.com</div>
+            <div class="email-label">📧 Email quote to contactus@itoldyouso.tech</div>
             <div class="email-flex">
                 <form id="quoteForm">
                     <!-- Hidden fields to store all the quote data -->
@@ -1401,7 +1404,7 @@
                 // Send admin notification
                 emailjs.send('service_lxc7ozk', 'admin_notification', {
                     ...templateParams,
-                    to_email: 'nevillebryce@gmail.com'
+                    to_email: 'contactus@itoldyouso.tech'
                 })
                 .then(() => {
                     emailsSent++;
