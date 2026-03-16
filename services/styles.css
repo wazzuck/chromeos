@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #f7b318;
     min-height: 100vh;
     padding: 20px;
     padding-top: 110px;
@@ -54,7 +54,7 @@ h1 {
 
 .service-tagline {
     font-size: 1.1rem;
-    color: #0071e3;
+    color: #f7b318;
     margin-bottom: 32px;
     font-weight: 500;
 }
@@ -62,7 +62,7 @@ h1 {
 .divider {
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #0071e3, transparent);
+    background: linear-gradient(90deg, transparent, #f7b318, transparent);
     margin: 32px 0;
 }
 
@@ -75,7 +75,7 @@ h1 {
 
 .service-benefits {
     background: #f5f7fa;
-    border-left: 4px solid #0071e3;
+    border-left: 4px solid #f7b318;
     padding: 24px;
     border-radius: 8px;
     margin-bottom: 32px;
@@ -101,7 +101,7 @@ h1 {
 
 .service-benefits li:before {
     content: "✓";
-    color: #0071e3;
+    color: #f7b318;
     font-weight: bold;
     margin-right: 12px;
     font-size: 1.2rem;
@@ -116,7 +116,7 @@ h1 {
 }
 
 .pricing-info h4 {
-    color: #0071e3;
+    color: #f7b318;
     margin-bottom: 12px;
     font-size: 1rem;
 }
@@ -129,7 +129,7 @@ h1 {
 
 .cta-button {
     display: inline-block;
-    background: #0071e3;
+    background: #f7b318;
     color: white;
     padding: 16px 40px;
     border-radius: 24px;
@@ -152,9 +152,9 @@ h1 {
 .cta-secondary {
     display: inline-block;
     background: transparent;
-    color: #0071e3;
+    color: #f7b318;
     padding: 12px 28px;
-    border: 2px solid #0071e3;
+    border: 2px solid #f7b318;
     border-radius: 20px;
     text-decoration: none;
     font-size: 0.95rem;
@@ -164,7 +164,7 @@ h1 {
 }
 
 .cta-secondary:hover {
-    background: #0071e3;
+    background: #f7b318;
     color: white;
     transform: translateY(-2px);
 }
@@ -183,7 +183,7 @@ footer {
 }
 
 .breadcrumb a {
-    color: #0071e3;
+    color: #f7b318;
     text-decoration: none;
     transition: color 0.2s ease;
 }
