@@ -3,7 +3,7 @@
 function adjustBodyPadding() {
     var header = document.querySelector('header');
     if (header) {
-        document.body.style.paddingTop = header.offsetHeight + 'px';
+        document.body.style.paddingTop = (header.offsetHeight + 20) + 'px';
     }
 }
 
